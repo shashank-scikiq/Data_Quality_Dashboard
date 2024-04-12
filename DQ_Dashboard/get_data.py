@@ -1,9 +1,9 @@
 from sqlalchemy import create_engine, MetaData, Table, Column, Date, String, BIGINT
 from sqlalchemy import Select
 
-engine = create_engine("postgresql+psycopg://postgres:password@localhost:5432/postgres")
+engine = create_engine("postgresql+psycopg://postgres:password@192.168.1.10:5432/postgres")
 meta = MetaData()
-meta.reflect(bind=engine, schema="staging_all")
+meta.reflect(bind=engine, schema="Data_Quality")
 
 od_dq = Table(
 	"od_dq_nhm",
@@ -33,7 +33,7 @@ od_dq = Table(
 	Column("null_sell_cty", BIGINT, nullable=True),
 	Column("total_orders", BIGINT, nullable=True),
 	Column("total_canceled_orders", BIGINT, nullable=True),
-	schema="staging_all",
+	schema="Data_Quality",
 	extend_existing=True
 )
 
