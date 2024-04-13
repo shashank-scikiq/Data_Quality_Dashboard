@@ -5,5 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
     image: img_dq_app:Version_1.0
+    ports:
+      - "8501:8082"
     env_file:
       - loc.env
