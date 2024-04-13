@@ -1,0 +1,9 @@
+services:
+  dq_app:
+    container_name: dq_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: img_dq_app:Version_1.0
+    env_file:
+      - loc.env
