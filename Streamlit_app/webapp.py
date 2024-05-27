@@ -5,7 +5,7 @@ import numpy as np
 #  Dashboard Elements
 # ====================================================
 
-# Overview of data fields and % daTA MISSING,
+# Overview of data fields and % Data Missing,
 # trend
 
 min_ord_date, max_ord_date = mdl.get_date_range()
@@ -86,7 +86,11 @@ with tab_det:
     if not fltr_val.__contains__("cans"):
         st.write(f"Sellers with Highest Missing {option_comp}.")
         missing_col = mdl.load_missing_pc(dt_val=dt, col_name=fltr_val, total=0)
-
+        
+        st.write(dt)
+        st.write(fltr_val)
+        st.write(missing_col)
+        
         if missing_col:
             col1, col2, col3 = st.columns(3)
 
