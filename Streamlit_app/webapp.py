@@ -87,9 +87,6 @@ with tab_det:
         st.write(f"Sellers with Highest Missing {option_comp}.")
         missing_col = mdl.load_missing_pc(dt_val=dt, col_name=fltr_val, total=0)
         
-        st.write(dt)
-        st.write(fltr_val)
-        st.write(missing_col)
         
         if missing_col:
             col1, col2, col3 = st.columns(3)
